@@ -28,7 +28,7 @@ export declare type Const<E, A> = E & {
 /**
  * @since 2.0.0
  */
-export declare const make: <E>(l: E) => Const<E, never>;
+export declare const make: <E, A = never>(l: E) => Const<E, A>;
 /**
  * @since 2.0.0
  */

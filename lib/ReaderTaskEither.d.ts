@@ -39,19 +39,19 @@ export declare function run<R, E, A>(ma: ReaderTaskEither<R, E, A>, r: R): Promi
 /**
  * @since 2.0.0
  */
-export declare function left<R, E>(e: E): ReaderTaskEither<R, E, never>;
+export declare function left<R, E = never, A = never>(e: E): ReaderTaskEither<R, E, A>;
 /**
  * @since 2.0.0
  */
-export declare const right: <R, A>(a: A) => ReaderTaskEither<R, never, A>;
+export declare const right: <R, E = never, A = never>(a: A) => ReaderTaskEither<R, E, A>;
 /**
  * @since 2.0.0
  */
-export declare function rightTask<R, A>(ma: Task<A>): ReaderTaskEither<R, never, A>;
+export declare function rightTask<R, E = never, A = never>(ma: Task<A>): ReaderTaskEither<R, E, A>;
 /**
  * @since 2.0.0
  */
-export declare function leftTask<R, E>(me: Task<E>): ReaderTaskEither<R, E, never>;
+export declare function leftTask<R, E = never, A = never>(me: Task<E>): ReaderTaskEither<R, E, A>;
 /**
  * @since 2.0.0
  */
@@ -59,11 +59,11 @@ export declare const fromTaskEither: <R, E, A>(ma: TaskEither<E, A>) => ReaderTa
 /**
  * @since 2.0.0
  */
-export declare const rightReader: <R, A>(ma: Reader<R, A>) => ReaderTaskEither<R, never, A>;
+export declare const rightReader: <R, E = never, A = never>(ma: Reader<R, A>) => ReaderTaskEither<R, E, A>;
 /**
  * @since 2.0.0
  */
-export declare function leftReader<R, E>(me: Reader<R, E>): ReaderTaskEither<R, E, never>;
+export declare function leftReader<R, E = never, A = never>(me: Reader<R, E>): ReaderTaskEither<R, E, A>;
 /**
  * @since 2.0.0
  */
@@ -75,11 +75,11 @@ export declare function fromReaderEither<R, E, A>(ma: ReaderEither<R, E, A>): Re
 /**
  * @since 2.0.0
  */
-export declare function rightIO<R, A>(ma: IO<A>): ReaderTaskEither<R, never, A>;
+export declare function rightIO<R, E = never, A = never>(ma: IO<A>): ReaderTaskEither<R, E, A>;
 /**
  * @since 2.0.0
  */
-export declare function leftIO<R, E>(me: IO<E>): ReaderTaskEither<R, E, never>;
+export declare function leftIO<R, E = never, A = never>(me: IO<E>): ReaderTaskEither<R, E, A>;
 /**
  * @since 2.0.0
  */
@@ -111,11 +111,11 @@ export declare function getApplyMonoid<R, E, A>(M: Monoid<A>): Monoid<ReaderTask
 /**
  * @since 2.0.0
  */
-export declare const ask: <R>() => ReaderTaskEither<R, never, R>;
+export declare const ask: <R, E = never>() => ReaderTaskEither<R, E, R>;
 /**
  * @since 2.0.0
  */
-export declare const asks: <R, A>(f: (r: R) => A) => ReaderTaskEither<R, never, A>;
+export declare const asks: <R, E = never, A = never>(f: (r: R) => A) => ReaderTaskEither<R, E, A>;
 /**
  * @since 2.0.0
  */

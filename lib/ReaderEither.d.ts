@@ -28,19 +28,19 @@ export interface ReaderEither<R, E, A> extends Reader<R, Either<E, A>> {
 /**
  * @since 2.0.0
  */
-export declare const left: <R, E>(e: E) => ReaderEither<R, E, never>;
+export declare const left: <R, E = never, A = never>(e: E) => ReaderEither<R, E, A>;
 /**
  * @since 2.0.0
  */
-export declare const right: <R, A>(a: A) => ReaderEither<R, never, A>;
+export declare const right: <R, E = never, A = never>(a: A) => ReaderEither<R, E, A>;
 /**
  * @since 2.0.0
  */
-export declare const rightReader: <R, A>(ma: Reader<R, A>) => ReaderEither<R, never, A>;
+export declare const rightReader: <R, E = never, A = never>(ma: Reader<R, A>) => ReaderEither<R, E, A>;
 /**
  * @since 2.0.0
  */
-export declare const leftReader: <R, E>(me: Reader<R, E>) => ReaderEither<R, E, never>;
+export declare const leftReader: <R, E = never, A = never>(me: Reader<R, E>) => ReaderEither<R, E, A>;
 /**
  * @since 2.0.0
  */
@@ -72,11 +72,11 @@ export declare function getApplyMonoid<R, E, A>(M: Monoid<A>): Monoid<ReaderEith
 /**
  * @since 2.0.0
  */
-export declare function ask<R>(): ReaderEither<R, never, R>;
+export declare function ask<R, E = never>(): ReaderEither<R, E, R>;
 /**
  * @since 2.0.0
  */
-export declare function asks<R, A>(f: (r: R) => A): ReaderEither<R, never, A>;
+export declare function asks<R, E = never, A = never>(f: (r: R) => A): ReaderEither<R, E, A>;
 /**
  * @since 2.0.0
  */

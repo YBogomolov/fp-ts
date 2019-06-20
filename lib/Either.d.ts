@@ -78,14 +78,14 @@ export declare type Either<E, A> = Left<E> | Right<A>;
  *
  * @since 2.0.0
  */
-export declare function left<E>(e: E): Either<E, never>;
+export declare function left<E = never, A = never>(e: E): Either<E, A>;
 /**
  * Constructs a new `Either` holding a `Right` value. This usually represents a successful value due to the right bias
  * of this structure
  *
  * @since 2.0.0
  */
-export declare function right<A>(a: A): Either<never, A>;
+export declare function right<E = never, A = never>(a: A): Either<E, A>;
 /**
  * Takes a default and a nullable value, if the value is not nully, turn it into a `Right`, if the value is nully use
  * the provided default as a `Left`

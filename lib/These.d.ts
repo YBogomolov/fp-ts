@@ -36,11 +36,11 @@ export declare type These<E, A> = Either<E, A> | Both<E, A>;
 /**
  * @since 2.0.0
  */
-export declare function left<E>(left: E): These<E, never>;
+export declare function left<E = never, A = never>(left: E): These<E, A>;
 /**
  * @since 2.0.0
  */
-export declare function right<A>(right: A): These<never, A>;
+export declare function right<E = never, A = never>(right: A): These<E, A>;
 /**
  * @since 2.0.0
  */

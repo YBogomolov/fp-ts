@@ -34,19 +34,19 @@ export interface IOEither<E, A> extends IO<Either<E, A>> {
 /**
  * @since 2.0.0
  */
-export declare const left: <E>(l: E) => IOEither<E, never>;
+export declare const left: <E = never, A = never>(l: E) => IOEither<E, A>;
 /**
  * @since 2.0.0
  */
-export declare const right: <A>(a: A) => IOEither<never, A>;
+export declare const right: <E = never, A = never>(a: A) => IOEither<E, A>;
 /**
  * @since 2.0.0
  */
-export declare const rightIO: <A>(ma: IO<A>) => IOEither<never, A>;
+export declare const rightIO: <E = never, A = never>(ma: IO<A>) => IOEither<E, A>;
 /**
  * @since 2.0.0
  */
-export declare const leftIO: <E>(me: IO<E>) => IOEither<E, never>;
+export declare const leftIO: <E = never, A = never>(me: IO<E>) => IOEither<E, A>;
 /**
  * @since 2.0.0
  */

@@ -36,27 +36,27 @@ export interface TaskEither<E, A> extends Task<Either<E, A>> {
 /**
  * @since 2.0.0
  */
-export declare const left: <E>(e: E) => TaskEither<E, never>;
+export declare const left: <E = never, A = never>(e: E) => TaskEither<E, A>;
 /**
  * @since 2.0.0
  */
-export declare const right: <A>(a: A) => TaskEither<never, A>;
+export declare const right: <E = never, A = never>(a: A) => TaskEither<E, A>;
 /**
  * @since 2.0.0
  */
-export declare function rightIO<A>(ma: IO<A>): TaskEither<never, A>;
+export declare function rightIO<E = never, A = never>(ma: IO<A>): TaskEither<E, A>;
 /**
  * @since 2.0.0
  */
-export declare function leftIO<E>(me: IO<E>): TaskEither<E, never>;
+export declare function leftIO<E = never, A = never>(me: IO<E>): TaskEither<E, A>;
 /**
  * @since 2.0.0
  */
-export declare const rightTask: <A>(ma: Task<A>) => TaskEither<never, A>;
+export declare const rightTask: <E = never, A = never>(ma: Task<A>) => TaskEither<E, A>;
 /**
  * @since 2.0.0
  */
-export declare const leftTask: <E>(me: Task<E>) => TaskEither<E, never>;
+export declare const leftTask: <E = never, A = never>(me: Task<E>) => TaskEither<E, A>;
 /**
  * @since 2.0.0
  */

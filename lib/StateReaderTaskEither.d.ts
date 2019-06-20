@@ -48,19 +48,19 @@ export declare const execState: <S, R, E, A>(ma: StateReaderTaskEither<S, R, E, 
 /**
  * @since 2.0.0
  */
-export declare function left<S, R, E>(e: E): StateReaderTaskEither<S, R, E, never>;
+export declare function left<S, R, E = never, A = never>(e: E): StateReaderTaskEither<S, R, E, A>;
 /**
  * @since 2.0.0
  */
-export declare const right: <S, R, A>(a: A) => StateReaderTaskEither<S, R, never, A>;
+export declare const right: <S, R, E = never, A = never>(a: A) => StateReaderTaskEither<S, R, E, A>;
 /**
  * @since 2.0.0
  */
-export declare function rightTask<S, R, A>(ma: Task<A>): StateReaderTaskEither<S, R, never, A>;
+export declare function rightTask<S, R, E = never, A = never>(ma: Task<A>): StateReaderTaskEither<S, R, E, A>;
 /**
  * @since 2.0.0
  */
-export declare function leftTask<S, R, E>(me: Task<E>): StateReaderTaskEither<S, R, E, never>;
+export declare function leftTask<S, R, E = never, A = never>(me: Task<E>): StateReaderTaskEither<S, R, E, A>;
 /**
  * @since 2.0.0
  */
@@ -68,11 +68,11 @@ export declare function fromTaskEither<S, R, E, A>(ma: TaskEither<E, A>): StateR
 /**
  * @since 2.0.0
  */
-export declare function rightReader<S, R, A>(ma: Reader<R, A>): StateReaderTaskEither<S, R, never, A>;
+export declare function rightReader<S, R, E = never, A = never>(ma: Reader<R, A>): StateReaderTaskEither<S, R, E, A>;
 /**
  * @since 2.0.0
  */
-export declare function leftReader<S, R, E>(me: Reader<R, E>): StateReaderTaskEither<S, R, E, never>;
+export declare function leftReader<S, R, E = never, A = never>(me: Reader<R, E>): StateReaderTaskEither<S, R, E, A>;
 /**
  * @since 2.0.0
  */
@@ -84,19 +84,19 @@ export declare function fromReaderEither<S, R, E, A>(ma: ReaderEither<R, E, A>):
 /**
  * @since 2.0.0
  */
-export declare function rightIO<S, R, A>(ma: IO<A>): StateReaderTaskEither<S, R, never, A>;
+export declare function rightIO<S, R, E = never, A = never>(ma: IO<A>): StateReaderTaskEither<S, R, E, A>;
 /**
  * @since 2.0.0
  */
-export declare function leftIO<S, R, E>(me: IO<E>): StateReaderTaskEither<S, R, E, never>;
+export declare function leftIO<S, R, E = never, A = never>(me: IO<E>): StateReaderTaskEither<S, R, E, A>;
 /**
  * @since 2.0.0
  */
-export declare const rightState: <S, R, A>(ma: State<S, A>) => StateReaderTaskEither<S, R, never, A>;
+export declare const rightState: <S, R, E = never, A = never>(ma: State<S, A>) => StateReaderTaskEither<S, R, E, A>;
 /**
  * @since 2.0.0
  */
-export declare function leftState<S, R, E>(me: State<S, E>): StateReaderTaskEither<S, R, E, never>;
+export declare function leftState<S, R, E = never, A = never>(me: State<S, E>): StateReaderTaskEither<S, R, E, A>;
 /**
  * @since 2.0.0
  */
@@ -106,25 +106,25 @@ export declare const fromReaderTaskEither: <S, R, E, A>(ma: ReaderTaskEither<R, 
  *
  * @since 2.0.0
  */
-export declare const get: <S, R>() => StateReaderTaskEither<S, R, never, S>;
+export declare const get: <S, R, E = never>() => StateReaderTaskEither<S, R, E, S>;
 /**
  * Set the state
  *
  * @since 2.0.0
  */
-export declare const put: <S, R>(s: S) => StateReaderTaskEither<S, R, never, void>;
+export declare const put: <S, R, E = never>(s: S) => StateReaderTaskEither<S, R, E, void>;
 /**
  * Modify the state by applying a function to the current state
  *
  * @since 2.0.0
  */
-export declare const modify: <S, R>(f: (s: S) => S) => StateReaderTaskEither<S, R, never, void>;
+export declare const modify: <S, R, E = never>(f: (s: S) => S) => StateReaderTaskEither<S, R, E, void>;
 /**
  * Get a value which depends on the current state
  *
  * @since 2.0.0
  */
-export declare const gets: <S, R, A>(f: (s: S) => A) => StateReaderTaskEither<S, R, never, A>;
+export declare const gets: <S, R, E = never, A = never>(f: (s: S) => A) => StateReaderTaskEither<S, R, E, A>;
 /**
  * @since 2.0.0
  */
